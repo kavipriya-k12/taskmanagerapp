@@ -1,0 +1,950 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #2864df;
+    --dark-blue: #1749b5;
+    --background: #f4f7fc;
+    --white: #ffffff;
+    --text: #182238;
+    --muted: #68758a;
+    --border: #e1e7f0;
+    --green: #18ad83;
+    --yellow: #f59e0b;
+    --red: #e54848;
+    --purple: #8b5cf6;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =================================
+   AUTH PAGE
+================================= */
+
+.auth-page {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef4ff,
+            #f8faff
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px 20px;
+}
+
+.auth-wrapper {
+    width: 100%;
+
+    max-width: 450px;
+}
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+.brand h1 {
+    color: var(--blue);
+
+    font-size: 30px;
+}
+
+.brand p {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+.brand-icon {
+    width: 50px;
+
+    height: 50px;
+
+    background: var(--blue);
+
+    color: white;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 28px;
+
+    font-weight: bold;
+}
+
+.auth-card {
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(32, 60, 100, 0.12);
+}
+
+.auth-heading {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.auth-heading h2 {
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.auth-heading p {
+    color: var(--muted);
+}
+
+.input-box {
+    margin-bottom: 20px;
+}
+
+.input-box label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.input-box input,
+.input-box textarea,
+.input-box select {
+    width: 100%;
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    padding: 14px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    background: white;
+}
+
+.input-box input:focus,
+.input-box textarea:focus,
+.input-box select:focus {
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(40, 100, 223, 0.1);
+}
+
+.main-btn {
+    width: 100%;
+
+    border: none;
+
+    background: var(--blue);
+
+    color: white;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.main-btn:hover {
+    background: var(--dark-blue);
+}
+
+.auth-footer {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.auth-footer a {
+    color: var(--blue);
+
+    font-weight: bold;
+}
+
+.message {
+    text-align: center;
+
+    font-size: 14px;
+
+    margin-top: 15px;
+}
+
+.message.success {
+    color: var(--green);
+}
+
+.message.error {
+    color: var(--red);
+}
+
+.copyright {
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin-top: 20px;
+}
+
+
+/* =================================
+   DASHBOARD HEADER
+================================= */
+
+.dashboard-page {
+    background: var(--background);
+
+    min-height: 100vh;
+}
+
+.top-header {
+    height: 82px;
+
+    background: white;
+
+    border-bottom: 1px solid var(--border);
+
+    padding: 0 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.dashboard-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.brand-icon.small {
+    width: 43px;
+
+    height: 43px;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+}
+
+.dashboard-brand h2 {
+    color: var(--blue);
+
+    font-size: 23px;
+}
+
+.dashboard-brand span {
+    font-size: 8px;
+
+    color: var(--muted);
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.header-user {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.user-details {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+}
+
+.user-details small {
+    color: var(--muted);
+
+    margin-top: 3px;
+}
+
+.logout-btn {
+    background: #edf3ff;
+
+    color: var(--blue);
+
+    border: none;
+
+    padding: 11px 18px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+}
+
+
+/* =================================
+   DASHBOARD
+================================= */
+
+.dashboard-container {
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 45px 25px;
+}
+
+.welcome {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.section-label {
+    color: var(--blue);
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+.welcome h1 {
+    font-size: 35px;
+
+    margin: 8px 0;
+}
+
+.welcome h1 span {
+    color: var(--blue);
+}
+
+.welcome p {
+    color: var(--muted);
+}
+
+.add-task-btn {
+    border: none;
+
+    background: var(--blue);
+
+    color: white;
+
+    padding: 14px 22px;
+
+    border-radius: 12px;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+.add-task-btn:hover {
+    background: var(--dark-blue);
+
+    transform: translateY(-1px);
+}
+
+
+/* =================================
+   STATISTICS
+================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border: 1px solid var(--border);
+}
+
+.stat-icon {
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+.stat-icon.blue {
+    background: #e9f0ff;
+}
+
+.stat-icon.yellow {
+    background: #fff4dc;
+}
+
+.stat-icon.purple {
+    background: #f0eaff;
+}
+
+.stat-icon.green {
+    background: #e1f8f0;
+}
+
+.stat-card p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+.stat-card h2 {
+    font-size: 27px;
+}
+
+
+/* =================================
+   TASK AREA
+================================= */
+
+.task-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.task-heading h2 {
+    font-size: 27px;
+
+    margin-bottom: 5px;
+}
+
+.task-heading p {
+    color: var(--muted);
+}
+
+.task-heading select {
+    border: 1px solid var(--border);
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 11px 15px;
+
+    outline: none;
+}
+
+.tasks-container {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+/* =================================
+   TASK CARD
+================================= */
+
+.task-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(50, 70, 100, 0.04);
+}
+
+.task-card-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.task-number {
+    width: 43px;
+
+    height: 43px;
+
+    background: #edf3ff;
+
+    color: var(--blue);
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+.task-status {
+    padding: 8px 14px;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.task-status.pending {
+    background: #fff3dc;
+
+    color: #a16207;
+}
+
+.task-status.in-progress {
+    background: #e9efff;
+
+    color: #3158b5;
+}
+
+.task-status.completed {
+    background: #dff8ef;
+
+    color: #08795d;
+}
+
+.task-title {
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+.task-description {
+    color: var(--muted);
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+.task-details {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    border-top: 1px dashed var(--border);
+
+    border-bottom: 1px dashed var(--border);
+
+    padding: 17px 0;
+
+    margin-bottom: 20px;
+}
+
+.detail {
+    display: flex;
+
+    gap: 8px;
+
+    align-items: center;
+}
+
+.detail > span {
+    font-size: 20px;
+}
+
+.detail div {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.detail small {
+    color: var(--muted);
+
+    font-size: 11px;
+
+    margin-bottom: 3px;
+}
+
+.detail strong {
+    font-size: 13px;
+}
+
+.priority-low {
+    color: var(--green);
+}
+
+.priority-medium {
+    color: var(--yellow);
+}
+
+.priority-high {
+    color: var(--red);
+}
+
+.overdue {
+    color: var(--red) !important;
+}
+
+.task-actions {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.task-actions button {
+    border: none;
+
+    padding: 10px 14px;
+
+    border-radius: 9px;
+
+    font-weight: bold;
+}
+
+.complete-btn {
+    background: #dff8ef;
+
+    color: #08795d;
+}
+
+.edit-btn {
+    background: #e9efff;
+
+    color: #3158b5;
+}
+
+.delete-btn {
+    background: #ffe7e7;
+
+    color: #c52222;
+}
+
+
+/* =================================
+   EMPTY STATE
+================================= */
+
+.empty-state {
+    display: none;
+
+    background: white;
+
+    border: 1px dashed #cbd5e1;
+
+    border-radius: 20px;
+
+    padding: 60px 20px;
+
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.empty-state h3 {
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    color: var(--muted);
+
+    margin-bottom: 20px;
+}
+
+
+/* =================================
+   MODAL
+================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(20, 30, 50, 0.55);
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-box {
+    width: 100%;
+
+    max-width: 570px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 30px 80px
+        rgba(0, 0, 0, 0.25);
+}
+
+.modal-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+.modal-header h2 {
+    margin-top: 5px;
+}
+
+.close-btn {
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f0f3f8;
+
+    font-size: 25px;
+
+    color: var(--text);
+}
+
+.two-column {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 900px) {
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .top-header {
+        padding: 0 18px;
+    }
+
+    .dashboard-brand h2 {
+        font-size: 20px;
+    }
+
+    .dashboard-brand span {
+        display: none;
+    }
+
+    .user-details {
+        display: none;
+    }
+
+    .dashboard-container {
+        padding: 30px 15px;
+    }
+
+    .welcome {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .welcome h1 {
+        font-size: 28px;
+    }
+
+    .add-task-btn {
+        width: 100%;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .task-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .task-heading select {
+        width: 100%;
+    }
+
+    .task-title {
+        font-size: 20px;
+    }
+
+    .task-details {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .modal-box {
+        padding: 22px;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-card {
+        padding: 30px 22px;
+    }
+
+}
